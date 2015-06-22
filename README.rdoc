@@ -1,28 +1,73 @@
-== README
+== Welcome to Shiping RESTful API
+==Description
+Ruby/Rails Developer Challenge
+---------------------------------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Directions: Build a minimal API, using Rails and MongoDB,
+for our products (please see attached).
+The API should be RESTful, serve JSON as the output, and contain the following CRUD functions:
 
-Things you may want to cover:
+CREATE
+1. Creates a product
 
-* Ruby version
+READ me
+At this point of time the MongoDb service is not opening in my local host window box.
+In some cases I used pseudo codes.
+This is first time using MongoDb I'll work with the debugger and Rspec
+to help with the fixes.
+knowingly I have mistakes like with ID: missing tests. Skeletons, scaffolds, pseudocodes are used ready for wrapp up.
+How ever the application is ready for first scrum discussions.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+By Folowing the TDD concepts
+I'll fix the errors on the fly as soon as I'll get my local host MongoDb service,
+RubyMine debugger and Rspec running.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1. Shows ALL products
+2. Shows ONE product that best matches a given length/width/height/weight query (For example,
+if I make an API request for a product with the following dimensions: 48”l X 14”w X 12”h (@ 42lbs)
+the API should send back “Golf - Small”.)
+
+UPDATE
+1. Updates a productss
+
+DESTROY
+1. Deletes a product
+==Test suite
+    At this poin of time the MongoDb server is not working on my window box
+    I prefer RSpec over MiniTest because the syntax encourages human readable tests.
+    However the API contains both. Therefore the developer can benchmark the framework to use.
+    rake spec
+    rake test
+==Version
+    Rails version:'4.1.8'
+    Ruby version: 2.15
+==Initial Command line tasks
+    bundle Install
+    rake db:setup
+    rake spec
+    rake test
+    rake doc:app
+    open doc/app/index.html
+==Database Creation
+    db:setup will import the data from doc\products.json.
+==documentation
+    rake doc:app
+    open doc/app/index.html
+==client that consumes
+
+A jQuery client that consumes a MongoDb-based RESTful web service.
+==Description to client that consumes
+The meta name="viewport" comes from Bootstrap. It makes the page scale
+scale according to the browser dimensions, be it a browser on a
+desktop PC or one in a smartphone. What follows is the Bootstrap
+CSS file, which we import from a CDN (content delivery network)
+so that we don't have to host it ourselves. Next come the
+Javascript files for jQuery, Bootstrap and Knockout, also imported from CDNs.
+In the body of the page we first have a top bar with the application title, created using Bootstrap's CSS styles.
+Then we have the main content area, where we will insert the application data.
+And finally, we will have our application code at the bottom,
+keeping in mind that for larger projects the application code should likely go
+into one or more independent Javascript source files.
+
+location: https://github.com/jookie/RubyMongoDb
