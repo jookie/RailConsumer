@@ -1,73 +1,63 @@
-== Welcome to Shiping RESTful API
-==Description
-Ruby/Rails Developer Challenge
----------------------------------
+== Welcome to Sample API consumer or API client
+==Description to Sample API consumer or API client
+see it working
 
-Directions: Build a minimal API, using Rails and MongoDB,
-for our products (please see attached).
-The API should be RESTful, serve JSON as the output, and contain the following CRUD functions:
+STEP 1: generate the rails app
 
-CREATE
-1. Creates a product
+we will call it RailConsumer
 
-READ me
-At this point of time the MongoDb service is not opening in my local host window box.
-In some cases I used pseudo codes.
-This is first time using MongoDb I'll work with the debugger and Rspec
-to help with the fixes.
-knowingly I have mistakes like with ID: missing tests. Skeletons, scaffolds, pseudocodes are used ready for wrapp up.
-How ever the application is ready for first scrum discussions.
+$ rails new api_consumer
 
-By Folowing the TDD concepts
-I'll fix the errors on the fly as soon as I'll get my local host MongoDb service,
-RubyMine debugger and Rspec running.
+STEP 2: add rest-client gems to your Gemfile
+
+gem ‘rest-client’
+
+run bundle install on the terminal
+
+$ bundle install
+
+STEP 3: generate the products controller
+
+STEP 4: add the routes for users resource in your routes
+ApiConsumer::Application.routes.draw do
+resources :products
+end
+
+STEP 5: Write the users controller code.
+
+Productss controller will have, the same actions and flow as you have seen in your,
+
+users controller, except that, here you interact with API provider database,
+
+thorugh its API call. IF you see the API provider document, you can see that they have provided you the authentication, url and expected data format.
+
+You just have to make a call to these URL and handle the returned data in your application. API now a days return, data in XML or json format in general,
+
+The API provider whose service we are going to use return JASZON data by default i,e if you do not provide format in URL, they will return JSON data.
 
 
-1. Shows ALL products
-2. Shows ONE product that best matches a given length/width/height/weight query (For example,
-if I make an API request for a product with the following dimensions: 48”l X 14”w X 12”h (@ 42lbs)
-the API should send back “Golf - Small”.)
+So below is our controller code :
 
-UPDATE
-1. Updates a productss
+NOTE : see the use of get post put and delete call of the REST client. It will decide which action of API provider will be called for certain URL
 
-DESTROY
-1. Deletes a product
-==Test suite
-    At this poin of time the MongoDb server is not working on my window box
-    I prefer RSpec over MiniTest because the syntax encourages human readable tests.
-    However the API contains both. Therefore the developer can benchmark the framework to use.
-    rake spec
-    rake test
-==Version
-    Rails version:'4.1.8'
-    Ruby version: 2.15
-==Initial Command line tasks
-    bundle Install
-    rake db:setup
-    rake spec
-    rake test
-    rake doc:app
-    open doc/app/index.html
-==Database Creation
-    db:setup will import the data from doc\products.json.
-==documentation
-    rake doc:app
-    open doc/app/index.html
-==client that consumes
 
-A jQuery client that consumes a MongoDb-based RESTful web service.
-==Description to client that consumes
-The meta name="viewport" comes from Bootstrap. It makes the page scale
-scale according to the browser dimensions, be it a browser on a
-desktop PC or one in a smartphone. What follows is the Bootstrap
-CSS file, which we import from a CDN (content delivery network)
-so that we don't have to host it ourselves. Next come the
-Javascript files for jQuery, Bootstrap and Knockout, also imported from CDNs.
-In the body of the page we first have a top bar with the application title, created using Bootstrap's CSS styles.
-Then we have the main content area, where we will insert the application data.
-And finally, we will have our application code at the bottom,
-keeping in mind that for larger projects the application code should likely go
-into one or more independent Javascript source files.
+both the API provider and API consumer are sample application running on my own local machine.
+I have fixed the port 3000 for the API provider application. so start the API provider application on 3000, which is by default
 
-location: https://github.com/jookie/RubyMongoDb
+$ cd to_api_provider_folder
+
+$ rails s # will start the API provider service at 3000
+
+NOTE : for API consumer code to work, The API provider application must be up and running
+
+Start the API consumer application on some other port, say 3030
+
+$ cd api_consumer
+
+$ rails s -p 3030
+
+Go to the index page of the application:
+
+http://localhost:3030/users # it will show you all product with edit | delete link and also a create new user link.
+
+So remaining things are self explainatory, try it out  yourself

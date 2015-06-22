@@ -1,0 +1,9 @@
+Mon, 22 Jun 2015 11:30:44 -0400
+README.rdoc	Mon, 22 Jun 2015 11:26:44 -0400
+app/controllers/application_controller.rb	Sun, 21 Jun 2015 23:23:40 -0400
+app/controllers/products_controller.rb	Mon, 22 Jun 2015 10:58:26 -0400
+app/helpers/application_helper.rb	Sun, 21 Jun 2015 23:23:40 -0400
+app/helpers/products_helper.rb	Mon, 22 Jun 2015 05:46:48 -0400
+app/helpers/rails_helper.rb	Sun, 21 Jun 2015 23:29:32 -0400
+app/models/product.rb	Mon, 22 Jun 2015 05:46:48 -0400
+app/models/rail.rb	Sun, 21 Jun 2015 23:29:32 -0400
